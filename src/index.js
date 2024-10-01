@@ -22,7 +22,7 @@ const setupAndStartServer = async () => {
   const channel = await createChannel();
   subscribeMessage(channel, EmailService.subscribeEvents, REMINDER_BINDING_KEY);
 
-  app.post("/api/v1/tickets", TicketContoller.create);
+  app.post("/reminderService/api/v1/tickets", TicketContoller.create);
   app.listen(PORT, async () => {
     console.log(`Server started at ${PORT}`);
     if (DB_SYNC == "true") {
